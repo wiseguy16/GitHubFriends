@@ -119,6 +119,67 @@
             </objects>
             <point key="canvasLocation" x="1886" y="472"/>
         </scene>
+        <!--Detail Friend View Controller-->
+        <scene sceneID="pth-sx-fG0">
+            <objects>
+                <viewController storyboardIdentifier="FriendDetailVC" id="kMf-vn-TB9" customClass="DetailFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XrD-Ut-JkQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="j7c-mc-lRr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eY5-9V-zQo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luke" translatesAutoresizingMaskIntoConstraints="NO" id="kSR-yA-v8U">
+                                <rect key="frame" x="20" y="20" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="FNO-HE-gob"/>
+                                    <constraint firstAttribute="width" constant="120" id="U14-oc-BaV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-m3-ISX">
+                                <rect key="frame" x="148" y="69" width="51" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-eW-ve6">
+                                <rect key="frame" x="538" y="70" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-5L-4MJ">
+                                <rect key="frame" x="45" y="148" width="70" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ajY-m3-ISX" firstAttribute="centerY" secondItem="kSR-yA-v8U" secondAttribute="centerY" id="2aO-V1-ylo"/>
+                            <constraint firstItem="vxQ-eW-ve6" firstAttribute="centerY" secondItem="ajY-m3-ISX" secondAttribute="centerY" id="4G6-Zf-UYJ"/>
+                            <constraint firstItem="kSR-yA-v8U" firstAttribute="top" secondItem="XrD-Ut-JkQ" secondAttribute="bottom" id="8oU-mb-f9J"/>
+                            <constraint firstItem="vxQ-eW-ve6" firstAttribute="trailing" secondItem="eY5-9V-zQo" secondAttribute="trailingMargin" id="Wfu-5f-aHN"/>
+                            <constraint firstItem="kSR-yA-v8U" firstAttribute="leading" secondItem="eY5-9V-zQo" secondAttribute="leadingMargin" id="eVD-21-60s"/>
+                            <constraint firstItem="ajY-m3-ISX" firstAttribute="leading" secondItem="kSR-yA-v8U" secondAttribute="trailing" constant="8" id="qFk-Mz-8oZ"/>
+                            <constraint firstItem="cwa-5L-4MJ" firstAttribute="top" secondItem="kSR-yA-v8U" secondAttribute="bottom" constant="8" id="vdF-1e-WCn"/>
+                            <constraint firstItem="cwa-5L-4MJ" firstAttribute="centerX" secondItem="kSR-yA-v8U" secondAttribute="centerX" id="yD0-PP-FXm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="friendImageView" destination="kSR-yA-v8U" id="HQO-4X-DjG"/>
+                        <outlet property="locationLabel" destination="cwa-5L-4MJ" id="aRT-cq-xQk"/>
+                        <outlet property="loginLabel" destination="vxQ-eW-ve6" id="t2i-t6-qTW"/>
+                        <outlet property="nameLabel" destination="ajY-m3-ISX" id="bSV-fs-9ia"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yf-zr-vcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="472"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BIy-gs-GgI">
             <objects>
@@ -138,4 +199,7 @@
             <point key="canvasLocation" x="371" y="472"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="luke" width="504" height="504"/>
+    </resources>
 </document>

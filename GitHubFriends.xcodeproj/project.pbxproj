@@ -16,6 +16,8 @@
 		4AFE73271D52632E000F5C67 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE73261D52632E000F5C67 /* APIController.m */; };
 		4AFE732A1D526380000F5C67 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE73291D526380000F5C67 /* Friend.m */; };
 		4AFE732D1D5278F5000F5C67 /* SeachFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */; };
+		4AFE73301D52942C000F5C67 /* DetailFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE732F1D52942C000F5C67 /* DetailFriendViewController.m */; };
+		4AFE73341D5297C1000F5C67 /* luke.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AFE73331D5297C1000F5C67 /* luke.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		4AFE73291D526380000F5C67 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		4AFE732B1D5278F5000F5C67 /* SeachFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachFriendsViewController.h; sourceTree = "<group>"; };
 		4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeachFriendsViewController.m; sourceTree = "<group>"; };
+		4AFE732E1D52942C000F5C67 /* DetailFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFriendViewController.h; sourceTree = "<group>"; };
+		4AFE732F1D52942C000F5C67 /* DetailFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFriendViewController.m; sourceTree = "<group>"; };
+		4AFE73331D5297C1000F5C67 /* luke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luke.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 			children = (
 				4AFE730A1D526097000F5C67 /* GitHubFriends */,
 				4AFE73091D526097000F5C67 /* Products */,
+				4AFE73331D5297C1000F5C67 /* luke.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +81,8 @@
 				4AFE73231D5260E1000F5C67 /* GitHubFriendsTableViewController.m */,
 				4AFE732B1D5278F5000F5C67 /* SeachFriendsViewController.h */,
 				4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */,
+				4AFE732E1D52942C000F5C67 /* DetailFriendViewController.h */,
+				4AFE732F1D52942C000F5C67 /* DetailFriendViewController.m */,
 				4AFE73251D52632E000F5C67 /* APIController.h */,
 				4AFE73261D52632E000F5C67 /* APIController.m */,
 				4AFE73141D526097000F5C67 /* Main.storyboard */,
@@ -151,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFE73341D5297C1000F5C67 /* luke.png in Resources */,
 				4AFE731B1D526097000F5C67 /* LaunchScreen.storyboard in Resources */,
 				4AFE73181D526097000F5C67 /* Assets.xcassets in Resources */,
 				4AFE73161D526097000F5C67 /* Main.storyboard in Resources */,
@@ -169,6 +178,7 @@
 				4AFE73101D526097000F5C67 /* AppDelegate.m in Sources */,
 				4AFE732D1D5278F5000F5C67 /* SeachFriendsViewController.m in Sources */,
 				4AFE73241D5260E1000F5C67 /* GitHubFriendsTableViewController.m in Sources */,
+				4AFE73301D52942C000F5C67 /* DetailFriendViewController.m in Sources */,
 				4AFE730D1D526097000F5C67 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

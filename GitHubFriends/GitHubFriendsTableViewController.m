@@ -10,6 +10,7 @@
 #import "SeachFriendsViewController.h"
 #import "APIController.h"
 #import "Friend.h"
+#import "DetailFriendViewController.h"
 
 @interface GitHubFriendsTableViewController () <APIControllerProtocol, SearchTextFieldDelegate>
 
@@ -58,6 +59,21 @@
     
     return cell;
 }
+
+// *******************WE WILL NEED METHOD didSelectRowAtIndexPath****************
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    DetailFriendViewController *newFriendVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendDetailVC"];
+    [[self navigationController] pushViewController:newFriendVC animated:YES];
+    
+    Friend *selectedFriend = self.friends[indexPath.row];
+    newFriendVC.friend = selectedFriend;
+    
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
