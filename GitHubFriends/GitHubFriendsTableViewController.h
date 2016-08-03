@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GitHubFriendsTableViewController.h
 //  GitHubFriends
 //
 //  Created by Gregory Weiss on 8/3/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GitHubFriendsTableViewController : UITableViewController
 
 @end
-
