@@ -69,7 +69,11 @@
          self.nameLabel.text = self.friend.name;
          self.loginLabel.text = self.friend.login;
          self.locationLabel.text = self.friend.location;
-       //  self.friendImageView.image = [UIImage imageNamed:self.friend.avatar_url]; //***********FIX THIS!!
+         NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:self.friend.avatar_url]];
+        // cell.image = [UIImage imageWithData: imageData];
+         
+         self.friendImageView.image = [UIImage imageWithData: imageData];
+        // [imageData release];
          
          
      }

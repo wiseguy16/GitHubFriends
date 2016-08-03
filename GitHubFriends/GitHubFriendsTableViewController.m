@@ -25,11 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"GitHub Friends";
     
     self.friends = [[NSMutableArray alloc] init];
-    APIController *apiController = [[APIController alloc] init];
-    apiController.delegate = self;
-    [apiController searchGitHubFor:@"wiseguy16"];
+//    APIController *apiController = [[APIController alloc] init];
+//    apiController.delegate = self;
+//    [apiController searchGitHubFor:@"wiseguy16"];
     
 }
 
@@ -111,6 +112,9 @@
 
 - (void)loadFriends
 {
+    APIController *apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    [apiController searchGitHubFor:@"wiseguy16"];
     
 }
 
@@ -132,8 +136,14 @@
 
 -(void)searchWasTyped:(NSString *)userToLookUp
 {
-    self.searchWord = userToLookUp;
+   // self.searchWord = userToLookUp;
+    APIController *apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    [apiController searchGitHubFor:userToLookUp];
     //[APIController searchGitHubFor:self.searchWord];
+    [self.tableView reloadData];
+    
+    //  jcgohlke
 }
 
 
