@@ -73,6 +73,9 @@
                                 <rect key="frame" x="20" y="40" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vsk-MF-n5W" id="3kP-sx-xYH"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-kl-xMb">
                                 <rect key="frame" x="269" y="184" width="63" height="34"/>

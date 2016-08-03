@@ -34,6 +34,7 @@
 
 - (IBAction)searchTapped:(UIButton *)sender
 {
+    [self.delegate searchWasTyped:self.searchGitHubTextField.text];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
