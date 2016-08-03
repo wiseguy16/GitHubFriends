@@ -17,7 +17,6 @@
 // private interface
 
 @property(strong, nonatomic) NSMutableArray *friends;
-@property(strong, nonatomic) NSString *searchWord;
 
 @end
 
@@ -76,39 +75,6 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)loadFriends
 {
@@ -136,43 +102,19 @@
 
 -(void)searchWasTyped:(NSString *)userToLookUp
 {
-   // self.searchWord = userToLookUp;
     APIController *apiController = [[APIController alloc] init];
     apiController.delegate = self;
     [apiController searchGitHubFor:userToLookUp];
-    //[APIController searchGitHubFor:self.searchWord];
     [self.tableView reloadData];
     
-    //  jcgohlke
 }
 
 
 
 -(void)didReceiveAPIResults:(NSDictionary *)gitHubResponse
 {
-    /*
-    for (NSDictionary *result in gitHubResponse)
-    {
-        NSString *name = result[@"name"];
-                [self.friends addObject:name];
-    }
-     
-     @property (nonatomic) NSString *login;
-     @property (nonatomic) NSString *location;
-     @property (nonatomic) NSString *avatar_url;
-     @property (nonatomic) NSNumber *public_repos;
-     
-     
-     
-     */
     Friend *aFriend = [Friend friendWithDictionary:gitHubResponse];
     [self.friends addObject:aFriend];
-    
-    
-//    NSString *resultName = gitHubResponse[@"name"];
-//    [self.friends addObject:resultName];
-//    NSString *resultLogin = gitHubResponse[@"login"];
-//    [self.friends addObject:resultLogin];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });

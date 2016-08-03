@@ -30,7 +30,6 @@
                                           {
                                               NSError *parseError = nil;
                                               NSDictionary *gitHubResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                                             // NSArray *results = gitHubResponse[@"results"];
                                               [self.delegate didReceiveAPIResults:gitHubResponse];
                                           }
                                           
