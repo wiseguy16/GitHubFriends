@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Git Hub Friends Table View Controller-->
@@ -44,11 +45,76 @@
                             <outlet property="delegate" destination="HHo-tS-pzK" id="daC-qG-JvQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="S7s-sO-IHF"/>
+                    <navigationItem key="navigationItem" id="S7s-sO-IHF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4ak-ki-zjr">
+                            <connections>
+                                <segue destination="Vsk-MF-n5W" kind="presentation" identifier="SearchGitHubSegue" id="1RY-kQ-D3m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="She-LO-Yvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1183" y="472"/>
+        </scene>
+        <!--Seach Friends View Controller-->
+        <scene sceneID="Dj9-dk-R40">
+            <objects>
+                <viewController id="Vsk-MF-n5W" customClass="SeachFriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vH0-xP-JBG"/>
+                        <viewControllerLayoutGuide type="bottom" id="VjA-Ww-YES"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uaw-Ic-WCB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a user..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6x-c8-QNT">
+                                <rect key="frame" x="20" y="40" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-kl-xMb">
+                                <rect key="frame" x="269" y="184" width="63" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.43138789733333338" blue="0.21637024140516262" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissTapped:" destination="Vsk-MF-n5W" eventType="touchUpInside" id="rYU-Ql-yYc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqx-Gs-Iet">
+                                <rect key="frame" x="241" y="110" width="118" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.39257539733333324" blue="0.19690314451521704" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Search GitHub">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchTapped:" destination="Vsk-MF-n5W" eventType="touchUpInside" id="FDn-oc-vL9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38823529411764707" green="0.14901960784313725" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="g6x-c8-QNT" firstAttribute="trailing" secondItem="Uaw-Ic-WCB" secondAttribute="trailingMargin" id="C38-Iq-3ZE"/>
+                            <constraint firstItem="RgD-kl-xMb" firstAttribute="centerX" secondItem="Uaw-Ic-WCB" secondAttribute="centerX" id="DJY-cV-eV1"/>
+                            <constraint firstItem="g6x-c8-QNT" firstAttribute="top" secondItem="vH0-xP-JBG" secondAttribute="bottom" constant="20" id="FiO-2f-fnA"/>
+                            <constraint firstItem="wqx-Gs-Iet" firstAttribute="centerX" secondItem="Uaw-Ic-WCB" secondAttribute="centerX" id="Zy1-3d-Aac"/>
+                            <constraint firstItem="wqx-Gs-Iet" firstAttribute="top" secondItem="g6x-c8-QNT" secondAttribute="bottom" constant="40" id="g0f-2p-pQT"/>
+                            <constraint firstItem="RgD-kl-xMb" firstAttribute="top" secondItem="wqx-Gs-Iet" secondAttribute="bottom" constant="40" id="kvA-pC-FbK"/>
+                            <constraint firstItem="g6x-c8-QNT" firstAttribute="leading" secondItem="Uaw-Ic-WCB" secondAttribute="leadingMargin" id="wOB-LW-HbZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchGitHubTextField" destination="g6x-c8-QNT" id="Yci-iv-rr2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZi-lz-8jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BIy-gs-GgI">

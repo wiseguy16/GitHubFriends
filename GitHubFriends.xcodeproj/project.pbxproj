@@ -15,6 +15,7 @@
 		4AFE73241D5260E1000F5C67 /* GitHubFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE73231D5260E1000F5C67 /* GitHubFriendsTableViewController.m */; };
 		4AFE73271D52632E000F5C67 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE73261D52632E000F5C67 /* APIController.m */; };
 		4AFE732A1D526380000F5C67 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE73291D526380000F5C67 /* Friend.m */; };
+		4AFE732D1D5278F5000F5C67 /* SeachFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		4AFE73261D52632E000F5C67 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		4AFE73281D526380000F5C67 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
 		4AFE73291D526380000F5C67 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		4AFE732B1D5278F5000F5C67 /* SeachFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachFriendsViewController.h; sourceTree = "<group>"; };
+		4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeachFriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				4AFE73291D526380000F5C67 /* Friend.m */,
 				4AFE73221D5260E1000F5C67 /* GitHubFriendsTableViewController.h */,
 				4AFE73231D5260E1000F5C67 /* GitHubFriendsTableViewController.m */,
+				4AFE732B1D5278F5000F5C67 /* SeachFriendsViewController.h */,
+				4AFE732C1D5278F5000F5C67 /* SeachFriendsViewController.m */,
 				4AFE73251D52632E000F5C67 /* APIController.h */,
 				4AFE73261D52632E000F5C67 /* APIController.m */,
 				4AFE73141D526097000F5C67 /* Main.storyboard */,
@@ -162,6 +167,7 @@
 				4AFE73271D52632E000F5C67 /* APIController.m in Sources */,
 				4AFE732A1D526380000F5C67 /* Friend.m in Sources */,
 				4AFE73101D526097000F5C67 /* AppDelegate.m in Sources */,
+				4AFE732D1D5278F5000F5C67 /* SeachFriendsViewController.m in Sources */,
 				4AFE73241D5260E1000F5C67 /* GitHubFriendsTableViewController.m in Sources */,
 				4AFE730D1D526097000F5C67 /* main.m in Sources */,
 			);
