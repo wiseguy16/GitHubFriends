@@ -7,8 +7,13 @@
 //
 
 #import "GitHubFriendsTableViewController.h"
+#import "APIController.h"
 
-@interface GitHubFriendsTableViewController ()
+@interface GitHubFriendsTableViewController () <APIControllerProtocol>
+
+// private interface
+
+@property(strong, nonatomic) NSMutableArray *friends;
 
 @end
 
@@ -17,11 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.friends = [[NSMutableArray alloc] init];
+    APIController *apiController = [[APIController alloc] init];
+    apiController.delegate = self;
+    [apiController searchGitHubFor:@"wiseguy16"];
+
+  
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,13 +43,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.friends.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenericCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = self.friends[indexPath.row];
     
     return cell;
 }
@@ -90,5 +98,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)didReceiveAPIResults:(NSDictionary *)gitHubResponse
+{
+    /*
+    for (NSDictionary *result in gitHubResponse)
+    {
+        NSString *name = result[@"name"];
+                [self.friends addObject:name];
+    }
+     */
+    NSString *resultName = gitHubResponse[@"name"];
+    [self.friends addObject:resultName];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
+}
 
 @end
