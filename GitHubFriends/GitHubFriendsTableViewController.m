@@ -9,12 +9,14 @@
 #import "GitHubFriendsTableViewController.h"
 #import "SeachFriendsViewController.h"
 #import "APIController.h"
+#import "Friend.h"
 
 @interface GitHubFriendsTableViewController () <APIControllerProtocol, SearchTextFieldDelegate>
 
 // private interface
 
 @property(strong, nonatomic) NSMutableArray *friends;
+@property(strong, nonatomic) NSString *searchWord;
 
 @end
 
@@ -27,8 +29,6 @@
     APIController *apiController = [[APIController alloc] init];
     apiController.delegate = self;
     [apiController searchGitHubFor:@"wiseguy16"];
-
-  
     
 }
 
@@ -51,7 +51,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenericCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = self.friends[indexPath.row];
+    Friend *aFriend = self.friends[indexPath.row];
+    
+    cell.textLabel.text = aFriend.name;
+    cell.detailTextLabel.text = aFriend.login;
     
     return cell;
 }
@@ -90,6 +93,11 @@
 }
 */
 
+- (void)loadFriends
+{
+    
+}
+
 
 #pragma mark - Navigation
 
@@ -108,7 +116,8 @@
 
 -(void)searchWasTyped:(NSString *)userToLookUp
 {
-    
+    self.searchWord = userToLookUp;
+    //[APIController searchGitHubFor:self.searchWord];
 }
 
 
@@ -121,10 +130,23 @@
         NSString *name = result[@"name"];
                 [self.friends addObject:name];
     }
+     
+     @property (nonatomic) NSString *login;
+     @property (nonatomic) NSString *location;
+     @property (nonatomic) NSString *avatar_url;
+     @property (nonatomic) NSNumber *public_repos;
+     
+     
+     
      */
-    NSString *resultName = gitHubResponse[@"name"];
-    [self.friends addObject:resultName];
+    Friend *aFriend = [Friend friendWithDictionary:gitHubResponse];
+    [self.friends addObject:aFriend];
     
+    
+//    NSString *resultName = gitHubResponse[@"name"];
+//    [self.friends addObject:resultName];
+//    NSString *resultLogin = gitHubResponse[@"login"];
+//    [self.friends addObject:resultLogin];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -132,3 +154,15 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
